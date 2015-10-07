@@ -1,4 +1,4 @@
-# Simple Rebalance Portfolio
+# Simple Rebalance Agent
 This is sample project that implements a simple portfolio rebalancing module. 
  
 ##Description
