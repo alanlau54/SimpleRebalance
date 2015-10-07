@@ -2,7 +2,7 @@
 This is sample project that implements a simple portfolio rebalancing module. 
  
 ##Description
-This project is portfolio with positions target allocations. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
+This project implements a portfolio holding equity positions. Each position has a ticker,shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
 
 * Single theaded for simplicity.
 * Equity quotes are designed to be updated by some type of market feed.
