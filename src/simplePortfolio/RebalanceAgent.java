@@ -38,7 +38,7 @@ public class RebalanceAgent {
 				}			
 			}
 		}	
-		return null;
+		return deltaTrades;
 	}
 
 }
