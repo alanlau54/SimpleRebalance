@@ -32,10 +32,5 @@ public class Portfolio {
 		double nav = positions.getMarketValue() + cash;
 		return nav;
 	}
-	
-	
-	// TBD takes in strategy and return positions
-	public void LoadTargets() {
 		
-	}
 }

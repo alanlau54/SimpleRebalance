@@ -10,8 +10,8 @@ public class Execution extends Order implements IExecution {
 	
 	double avgPrice;
 	
-	public Execution(String ticker, int shares, double price) {
-		super(ticker, shares, price);
+	public Execution(Side side, String ticker, int shares, double price) {
+		super(side, ticker, shares, price);
 		this.avgPrice = price;
 	}
 

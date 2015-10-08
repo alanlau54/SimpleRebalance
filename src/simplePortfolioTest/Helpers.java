@@ -20,6 +20,12 @@ public class Helpers {
 		equity.setPrice(mktPrice);
 		return new Position(ticker, shares, avgPrice, targetAllocation, equity);
 	}
+	
+	public static Position CreatePosition(String ticker, int shares, double avgPrice, double targetAllocation, double mktPrice, double actualAllocation) {
+		Position position = CreatePosition(ticker, shares, avgPrice, targetAllocation, mktPrice);
+		position.setActualAllocation(actualAllocation);
+		return position;
+	}
 
 	public static Positions CreateDefaultPositions() {
 		Position googPos = CreatePosition ("GOOG", 52, 98,.60, 98);
@@ -29,7 +35,20 @@ public class Helpers {
 		positions.AddPosition(googPos);
 		positions.AddPosition(aaplPos);
 		positions.AddPosition(tslaPos);
+		positions.UpdatePositions();
 		return positions;
 	}	
+	/*
+	public static Positions CreateSimplePositions() {
+		Position xPos = CreatePosition ("X", 1, 100,.50, 50);
+		Position yPos = CreatePosition ("Y", 1, 50,.50, 50);
+		Positions positions = new Positions();
+		positions.AddPosition(xPos);
+		positions.AddPosition(yPos);
+		positions.UpdatePositions();
+		return positions;
+	}
+	*/	
+
 
 }
