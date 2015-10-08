@@ -1,6 +1,6 @@
 # Simple Rebalance Agent
 This is sample project that implements a simple portfolio rebalancing module. 
-The project contains a portfolio holding equity positions. Each position has a ticker,shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
+The project contains a portfolio holding equity positions. Each position has a ticker, shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
 
 ##Technical Design Decisions
 * Single theaded for simplicity. No need to add locks and sychronize changing quote prices.
@@ -13,6 +13,7 @@ Given More Time:
 * Fully implement cash in changing positions.
 * Account for Implementation shortfall.
 * Update Equity object with market feed.
+* Add Country to Equity object to support CAN tickers.
 * Use actual equity stock boardlots.
 * Avg Price calculation for each position with Execution history.
 * Load/Save Portfolio.
@@ -24,9 +25,10 @@ Given More Time:
 * JUnit 4
 
 ##Installation
+* Download src
 
 ##Testing
-* See simplePortfolioTest
+* See unit test in simplePortfolioTest
 
 ##Contact
 * alau54@gmail.com
