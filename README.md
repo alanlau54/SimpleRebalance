@@ -1,9 +1,8 @@
 # Simple Rebalance Agent
 This is sample project that implements a simple portfolio rebalancing module. 
- 
-##Description
-This project implements a portfolio holding equity positions. Each position has a ticker,shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
+The project contains a portfolio holding equity positions. Each position has a ticker,shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
 
+##Technical Details
 * Single theaded for simplicity.
 * Equity quotes are designed to be updated by some type of market feed.
 * Cash is not accounted for changing positions.
@@ -13,6 +12,7 @@ This project implements a portfolio holding equity positions. Each position has 
 * Load/Save Portfolio
 
 More Time:
+* Possibly use BigDecimal for prices
 * Integration testing where quotes are modified and portfolio changes can be seen
 
 ##Requirements
