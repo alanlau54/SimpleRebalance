@@ -10,13 +10,15 @@ The project contains a portfolio holding equity positions. Each position has a t
 
 Given More Time:
 * Add strategy to RebalanceAgent to support different balancing methods.
-* Fully implement cash in changing positions.
+* Fully implement cash in changing positions. 
+* Logger for order/position state.
 * Account for Implementation shortfall.
 * Update Equity object with market feed.
 * Add Country to Equity object to support CAN tickers.
 * Use actual equity stock boardlots.
 * Avg Price calculation for each position with Execution history.
 * Load/Save Portfolio.
+* Add a position manager to send orders.
 * Possibly use BigDecimal for prices.
 * Integration testing where quotes are modified and portfolio changes can be seen.
 
@@ -34,4 +36,7 @@ Given More Time:
 * alanlau54@gmail.com
 
 ##Known Issues
-* Updating new quotes is a bit clunky. 
+* Rounding may leave portfolio less than fully allocated.
+* Does not support CAN tickers.
+* Updating new quotes is a bit clunky.
+* Viewing rebalance orders could be easier
