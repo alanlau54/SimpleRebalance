@@ -3,7 +3,7 @@ This is sample project that implements a simple portfolio rebalancing module.
 The project contains a portfolio holding equity positions. Each position has a ticker, shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
 
 ##Technical Design Decisions
-* Single theaded for simplicity. No need to add locks and sychronize changing quote prices.
+* Single theaded for simplicity. No need to add locks and synchronize changing quote prices.
 * EquityFactory singleton is used to be easy access and hook into updates by a market feed.
 * Positions updated on demand for simplicity.
 * Order, Execution, Position object hierarchy can lead to a unified trade object for the entire application.
