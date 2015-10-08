@@ -25,7 +25,7 @@ Given More Time:
 * JUnit 4
 
 ##Installation
-* Download src
+* Github Download ZIP, clone in desktop or view src folder.
 
 ##Testing
 * See unit test in simplePortfolioTest
