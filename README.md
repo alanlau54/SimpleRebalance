@@ -31,7 +31,7 @@ Given More Time:
 * See unit test in simplePortfolioTest
 
 ##Contact
-* alau54@gmail.com
+* alanlau54@gmail.com
 
 ##Known Issues
 * Updating new quotes is a bit clunky. 
