@@ -5,6 +5,7 @@ The project contains a portfolio holding equity positions. Each position has a t
 ##Technical Design Decisions
 * Single theaded for simplicity. Do not have to worry about changing quotes.
 * EquityFactory singleton is used to be easy access and hook into updates by a market feed.
+* Order, Execution, Position hierarchy
 
 More Time:
 * Cash is not accounted for changing positions.
@@ -25,4 +26,4 @@ More Time:
 
 ##Contact
 
-##Known Bugs
+##Known Issues
