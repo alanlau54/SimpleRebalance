@@ -1,6 +1,11 @@
 package simplePortfolio;
 import java.util.HashMap;
 
+/**
+ * Represents all the equity holdings for a portfolio. 
+ * @author Alan
+ *
+ */
 public class Positions {
 	private double bookValue;
 	private double marketValue;
@@ -9,12 +14,20 @@ public class Positions {
 	public Positions() {
 	}
 	
+	/**
+	 * Update all the positions with the current equity prices and their actual allocations
+	 */
 	public void UpdatePositions()
 	{
 		double netAssetValue = CalculateNAV(positions);
 		UpdateAllocations (positions, netAssetValue);
 	}
 	
+	/**
+	 * Update all the positions with their actual allocation
+	 * @param positions
+	 * @param netAssetValue
+	 */
 	public void UpdateAllocations(HashMap<Equity,IPosition> positions, double netAssetValue)
 	{
 		for (IPosition position : positions.values()){
@@ -22,6 +35,11 @@ public class Positions {
 		}
 	}
 	
+	/**
+	 * Update a position with the calculated actual allocation  
+	 * @param position
+	 * @param netAssetValue
+	 */
 	public void UpdateAllocation(IPosition position, double netAssetValue) {
 		if (netAssetValue==0)
 			return;
@@ -30,7 +48,12 @@ public class Positions {
 		position.setActualAllocation(actualAllocation);
 	}
 	
-    private double CalculateNAV(HashMap<Equity,IPosition> positions) {	
+	/**
+	 * Calculate the net asset value of all the positions
+	 * @param positions
+	 * @return
+	 */
+	private double CalculateNAV(HashMap<Equity,IPosition> positions) {	
 		marketValue=0.0;
 		for (IPosition pos : positions.values()){
 			marketValue += pos.getMarketValue();
@@ -54,6 +77,11 @@ public class Positions {
 		return positions;
 	}
 
+	/**
+	 * Add a position.
+	 * Note BookValue and MarketValue are cached here for performance. 
+	 * @param position
+	 */
 	public void AddPosition(IPosition position) {
 		Equity equity = position.getEquity();
 		if (!positions.containsKey(equity)) {

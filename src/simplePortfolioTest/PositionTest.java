@@ -71,57 +71,12 @@ public class PositionTest {
 
 	@Test
 	public void testGetMarketEquity() {
-		assertEquals("Equity matches", "XIU" , this.position.getEquity()); 
+		assertEquals("Equity matches", "XIU" , this.position.getEquity().getTicker()); 
 	}
 
 	@Test
 	public void testGetEquity() {
-		assertEquals("Equity matches", "XIU" , this.position.getEquity());
-	}
-
-	@Test
-	public void testGetTicker() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetShares() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetAvgPrice() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetBookValue() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetMarketValue() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTargetAllocation() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetTargetAllocation() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetActualAllocation() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetActualAllocation() {
-		fail("Not yet implemented");
+		assertEquals("Equity matches", "XIU" , this.position.getEquity().getTicker());
 	}
 
 }
