@@ -1,8 +1,9 @@
-# Simple Rebalance Agent
-This is sample project that implements a simple portfolio rebalancing module. 
+# Rebalance Agent
+This is sample project that implements a portfolio rebalancing application
 The project contains a portfolio holding equity positions. Each position has a ticker, shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
 
 ##Technical Design Decisions
+* RebalanceAnalytic is the core calculation
 * Single theaded for simplicity. No need to add locks and synchronize changing quote prices.
 * EquityFactory singleton is used to be easy access and hook into updates by a market feed.
 * Positions updated on demand for simplicity.
@@ -29,7 +30,13 @@ Given More Time:
 ##Installation
 * Github Download ZIP, clone in desktop or view src folder.
 
+##Usage
+* Retrieve the number of shares required to move from current to target
+RebalanceAnalytic.GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
+GetTargetDeltaShares(0, 1, 10000, double 100) = 100
+
 ##Testing
+* 
 * See unit test in simplePortfolioTest
 
 ##Contact
