@@ -12,6 +12,8 @@ import simplePortfolio.IOrder.Side;
  */
 public class RebalanceAgent {
 	
+	protected RebalanceAnalytic analytic = new RebalanceAnalytic();
+	
 	public RebalanceAgent() {
 	}
 	
@@ -23,11 +25,8 @@ public class RebalanceAgent {
 	 * @param netAssetValue
 	 * @return
 	 */
-	public int GetTargetDeltaAllocation(IPosition currentPosition, IPosition targetPosition, double netAssetValue) {	
-		double diffPct = (targetPosition.getTargetAllocation() - currentPosition.getActualAllocation());
-		double diffValue = netAssetValue * diffPct;
-		double equityPrice = targetPosition.getEquity().getPrice();	
-		int shares = (equityPrice) !=0 ? (int)Math.floor(diffValue / equityPrice) : 0; 
+	public int GetTargetDeltaAllocation(IPosition currentPosition, IPosition targetPosition, double netAssetValue) {		
+		int shares = analytic.GetTargetDeltaShares(currentPosition.getActualAllocation(), targetPosition.getTargetAllocation(), netAssetValue, targetPosition.getEquity().price); 
 		return shares;		
 	}
 	
