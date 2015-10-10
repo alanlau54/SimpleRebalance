@@ -31,12 +31,17 @@ Given More Time:
 * Github Download ZIP, clone in desktop or view src folder.
 
 ##Usage
-* Retrieve the number of shares required to move from current to target
-RebalanceAnalytic.GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
-GetTargetDeltaShares(0, 1, 10000, double 100) = 100
+* Example to retrieve the number of shares required to move from current to target
+GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
+
+RebalanceAnalytic analytic= new RebalanceAnalytic()
+analytic.GetTargetDeltaShares(0, 1, 10000, double 100) = 100
+// This translates to Buy 100 shares 
+
+analytic.GetTargetDeltaShares(1, 0, 10000, double 100) = -100
+// This translates to Sell 100 shares
 
 ##Testing
-* 
 * See unit test in simplePortfolioTest
 
 ##Contact
