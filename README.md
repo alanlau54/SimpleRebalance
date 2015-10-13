@@ -33,11 +33,12 @@ int GetTargetDeltaShares(double currentPct, double targetPct, double netAssetVal
 
 RebalanceAnalytic analytic= new RebalanceAnalytic()
 
-// The following translates to Buy 100 shares
-analytic.GetTargetDeltaShares(0, 1, 10000, double 100) = 100
+// The following translates to 0% Current, 100 Target, 10000 NAV, 100 Price = Buy 100 shares
+analytic.GetTargetDeltaShares(0, 1, 10000, 100) = 100
 
 // This following translates to Sell 100 shares
-analytic.GetTargetDeltaShares(1, 0, 10000, double 100) = -100
+// The following translates to 100% Current, 0% Target, 10000 NAV, 100 Price = Sell 100 shares
+analytic.GetTargetDeltaShares(1, 0, 10000, 100) = -100
 ```
 
 ##Testing
