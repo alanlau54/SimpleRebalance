@@ -27,9 +27,10 @@ Given More Time:
 * Github Download ZIP, clone in desktop or view src folder.
 
 ##Usage
-* Example to retrieve the number of shares required to move from current to target
 ```
-GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
+// Method call in RebalanceAnalytic.java to retrieve the number of shares required to move from current to target
+int GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
+
 RebalanceAnalytic analytic= new RebalanceAnalytic()
 
 // The following translates to Buy 100 shares
