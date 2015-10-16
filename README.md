@@ -1,5 +1,5 @@
-# Rebalance Agent
-This is sample project that implements a portfolio rebalancing application
+# Rebalance Analytic
+This is sample project that implements a portfolio rebalancing analytic
 The project contains a portfolio holding equity positions. Each position has a ticker, shares, target allocation and actual allocation. As prices fluctuate, the actual allocations of investments may diverge from the target allocations.
 
 ##Technical Design Decisions
@@ -10,18 +10,14 @@ The project contains a portfolio holding equity positions. Each position has a t
 * Order, Execution, Position object hierarchy can lead to a unified trade object for the entire application.
 
 Given More Time:
-* Add strategy to RebalanceAgent to support different balancing methods.
 * Fully implement cash in changing positions. 
 * Logger for order/position state.
-* Account for Implementation shortfall.
 * Update Equity object with market feed.
 * Add Country to Equity object to support CAN tickers.
 * Use actual equity stock boardlots.
 * Avg Price calculation for each position with Execution history.
 * Load/Save Portfolio.
-* Add a position manager to send orders.
 * Possibly use BigDecimal for prices.
-* Integration testing where quotes are modified and portfolio changes can be seen.
 
 ##Requirements
 * javaSE 1.7
@@ -31,15 +27,18 @@ Given More Time:
 * Github Download ZIP, clone in desktop or view src folder.
 
 ##Usage
-* Example to retrieve the number of shares required to move from current to target
-* GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
+```
+// Method call in RebalanceAnalytic.java to retrieve the number of shares required to move from current to target
+int GetTargetDeltaShares(double currentPct, double targetPct, double netAssetValue, double equityPrice)
 
-* RebalanceAnalytic analytic= new RebalanceAnalytic()
-* analytic.GetTargetDeltaShares(0, 1, 10000, double 100) = 100
-* // This translates to Buy 100 shares 
+RebalanceAnalytic analytic= new RebalanceAnalytic()
 
-* analytic.GetTargetDeltaShares(1, 0, 10000, double 100) = -100
-* // This translates to Sell 100 shares
+// The following translates to 0% Current, 100 Target, 10000 NAV, 100 Price = Buy 100 shares
+analytic.GetTargetDeltaShares(0, 1, 10000, 100) = 100
+
+// The following translates to 100% Current, 0% Target, 10000 NAV, 100 Price = Sell 100 shares
+analytic.GetTargetDeltaShares(1, 0, 10000, 100) = -100
+```
 
 ##Testing
 * See unit test in simplePortfolioTest
@@ -50,5 +49,3 @@ Given More Time:
 ##Known Issues
 * Rounding may leave portfolio less than fully allocated.
 * Does not support CAN tickers.
-* Updating new quotes is a bit clunky.
-* Viewing rebalance orders could be easier
