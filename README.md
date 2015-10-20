@@ -20,7 +20,7 @@ Given More Time:
 * Possibly use BigDecimal for prices.
 
 ##Requirements
-* javaSE 1.7
+* javaSE 1.8
 * JUnit 4
 
 ##Installation
