@@ -27,7 +27,7 @@ public class EquityTest {
 	public void testLotSize() {
 		String ticker = "XIU";
 		Equity equity = new Equity(ticker);
-		assertEquals("Same Lotsize", 1, equity.getLotsize());
+		assertEquals("Same Lotsize", 100, equity.getLotsize());
 	}
 	
 	@Test

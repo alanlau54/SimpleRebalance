@@ -19,7 +19,7 @@ public class Equity {
 	 */
 	public Equity(String ticker) {
 		this.ticker = ticker;
-		this.lotsize = 1; 	// TBD: Supplied by security master;
+		this.lotsize = 100; 	// TBD: Supplied by security master;
 	}
 	
 	/**
